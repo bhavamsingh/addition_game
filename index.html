@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display:flex; align-items:center;">
+        <h1 id="num1"></h1>
+        <span style="margin: 0 10px;"> + </span>
+        <h2 id="num2"></h2>
+    </div>
+        <input onkeyup ="getInput()" type="number" id="userInput">
+        <button onclick="check()">Check</button>
+        <script type="text/javascript">
+            // two number from javascript Math.random()
+
+            // console.log(Math.random())
+            let num1 = Math.ceil(Math.random()*10)
+            let num2 = Math.ceil(Math.random()*10)
+            // console.log(num1)
+            // console.log(num2)
+
+            let n1 = document.getElementById("num1");
+            let n2 = document.getElementById("num2");
+
+            // console.log(typeof n1.innerHTML)
+            n1.innerHTML=num1;
+            n2.innerHTML=num2;
+            
+        //    console.log(typeof num2)
+
+        
+        let userIn = 0;
+
+            function getInput(){
+                let userInput = document.getElementById("userInput"); 
+                    // console.log(userInput.value);
+                    userIn = userInput.value;
+                }
+                // synchronous asynchronous
+                function check(){
+                    // console.log(num1)
+                    // console.log(num2)
+                    // console.log(userIn)
+                    if (userIn==num1+num2){
+                        alert("correct ans")
+                        // location.href = "/JAVASCRIPT/javamathrandm.html";
+                        // location.href = "https://www.google.com";
+                        location.href="/javamathrandm.html";
+                    }else{
+                        alert("wrong ans")
+                        n1.style.color = "red";
+                        n2.style.color = "red";
+                    }
+                }
+            
+        </script>
+    
+</body>
+</html>
